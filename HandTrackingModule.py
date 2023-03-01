@@ -35,9 +35,7 @@ class handDetector():
         self.hands_status = {'Right': False, 'Left': False, 'Right_index': None, 'Left_index': None}
         #getHandType
         if self.results.multi_handedness:
-
-
-            for hand_index, hand_info in enumerate(self.results.multi_handedness):
+             for hand_index, hand_info in enumerate(self.results.multi_handedness):
                 # Retrieve the label of the found hand.
                 hand_type = hand_info.classification[0].label
                 # Update the status of the found hand.

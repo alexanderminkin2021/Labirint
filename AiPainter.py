@@ -50,21 +50,32 @@ def example():
 
         # 2. Find Hand Landmarks
         img = detector.findHands(img)  # using functions for connecting landmarks
-        lmList, bbox,hands_status = detector.findPosition(img, draw=True)  # using function to find specific landmark position,draw false means no circles on landmarks
-        print(hands_status)
+        lmList, bbox, hands_status = detector.findPosition(img,draw=True)  # using function to find specific landmark position,draw false means no circles on landmarks
+
         if  hands_status['Left']==True:
             print("Left HAND")
+            lmList, bbox, hands_status = detector.findPosition(img,draw=False)  # using function to find specific landmark position,draw false means no circles on landmarks
+            print(lmList)
             fingers = detector.fingerUp()
-            print(fingers)
+            #print(fingers)
+
+        if hands_status['Right'] == True:
+            print("Right HAND")
+            lmList, bbox, hands_status = detector.findPosition(img,draw=False)  # using function to find specific landmark position,draw false means no circles on landmarks
+            print(lmList)
+            fingers = detector.fingerUp()
+            # print(fingers)
 
         if len(lmList) != 0:
             # print(lmList)
             x1, y1 = lmList[8][1], lmList[8][2]  # tip of index finger
             x2, y2 = lmList[12][1], lmList[12][2]  # tip of middle finger
+            x1=x1
+            y1=y1
             y1=480-y1
             # 3. Check which fingers are up
             fingers = detector.fingerUp()
-            print(fingers)
+            #print(fingers)
 
             # 4. If Selection Mode - Two finger are up
             ''' if fingers[1] and fingers[2]:
@@ -115,7 +126,7 @@ def example():
                     imgCanvas[:] = (255, 255, 255)# defining canvas
                     imgCanvas[int(height / 2 - height2 / 2):int(height / 2 + height2 / 2),int(width / 2 - width2 / 2):int(width / 2 + width2 / 2)] = pic
 
-                cv2.line(img, (xp, yp), (x1, y1), drawColor,brushThickness)  # gonna draw lines from previous coodinates to new positions
+                #cv2.line(img, (xp, yp), (x1, y1), drawColor,brushThickness)  # gonna draw lines from previous coodinates to new positions
                 cv2.line(imgCanvas, (xp, yp), (x1, y1), drawColor, brushThickness)
 
 
@@ -140,7 +151,7 @@ def example():
         # setting the header image
        # img[0:50, 0:640] = header  # on our frame we are setting our JPG image acc to H,W of jpg images
 
-            if x1>width/2 and x1<width and y1<120 and switchOn==True:
+            if x1>width/2 and x1<width and y1<120 and switchOn==True:# if you get finish maze
                 break
 
         cv2.imshow("Image", img)
@@ -155,6 +166,8 @@ def example():
     cv2.imwrite('Folder/labirint4.jpg', imgCanvas)
     cap.release()
     cv2.destroyAllWindows()
+
+
 
     #check labirint
 

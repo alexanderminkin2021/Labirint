@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 cap = cv2.VideoCapture(1)
-width  = int(cap.get(3))   # float `width`
+width = int(cap.get(3))   # float `width`
 height = int(cap.get(4))  # float `height`
 print(width)
 print(height)
