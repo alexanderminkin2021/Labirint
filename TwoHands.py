@@ -11,17 +11,17 @@ drawColor = (255, 0, 255)  # setting purple color
 
 xp1, yp1 = 0, 0
 xp2,yp2=0,0
-imgCanvas = np.zeros((480, 640, 3), np.uint8)  # defining canvas
+imgCanvas = np.zeros((800, 1100, 3), np.uint8)  # defining canvas
 imgCanvas[:] = (255, 255, 255)#set white color
 
 cap.set(3, 640)  # width
 cap.set(4, 480)  # height
 
-width  = int(cap.get(3))   # float `width`
-height = int(cap.get(4))  # float `height`
+width  =1000# int(cap.get(3))   # float `width`
+height =900# int(cap.get(4))  # float `height`
 
 pic = cv2.imread('Folder/spiral.jpg')
-pic=cv2.resize(pic,(320,240))
+pic=cv2.resize(pic,(900,600))
 
 height2, width2 = pic.shape[:2]
 
