@@ -19,11 +19,7 @@ def example():
     folderPath = "Folder"
     myList = os.listdir(folderPath)  # getting all the images used in code
     # print(myList)
-    for imPath in myList:  # reading all the images from the folder
-        image = cv2.imread(f'{folderPath}/{imPath}')
-        image=cv2.resize(image,(640,50))
-        overlayList.append(image)  # inserting images one by one in the overlayList
-    header = overlayList[0]  # storing 1st image
+
     cap = cv2.VideoCapture(1)
     cap.set(3, 640)  # width
     cap.set(4, 480)  # height
