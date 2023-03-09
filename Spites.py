@@ -3,7 +3,7 @@ import pygame
 
 p1_movement = 0
 p2_movement = 0
-
+FPS=120
 pygame.init()
 
 BLACK = (0, 0, 0)
@@ -17,7 +17,7 @@ HEIGHTONE = 1000
 pygame.display.set_caption("Tron")
 screen = pygame.display.set_mode((1000, 1000))
 clock = pygame.time.Clock()
-clock.tick(60)
+clock.tick(FPS)
 screen.fill((0, 0, 0))
 
 
@@ -126,6 +126,7 @@ while running:
     screen.blit(player.surf, player.rect)
     screen.blit(playertwo.surf, playertwo.rect)
     pygame.display.flip()
+    clock.tick(FPS)
 
 pygame.quit()
 
