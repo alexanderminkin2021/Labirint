@@ -334,7 +334,9 @@ function convertCordsToDomPosition({ x, y }) {
   };
 }
 
-
+let sled=false;
+let prevX2=40;
+let prevY2=40;
 function updateCursor(handData) {
   if(handData.multiHandLandmarks){
         const cursorCords = getCursorCords(handData);
@@ -345,12 +347,24 @@ function updateCursor(handData) {
 
       let numX=parseInt(x);
       let numY=parseInt(y);
+     var dx2 = numX-prevX2;
+	 var dy2 = numY-prevY2;
+	 let distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+	 if (distance2>30)
+      {
+        sled=true;
+        prevY2=numY;
+        prevX2=numX;
+      }
+      else{
+        sled=false;
+      }
       var dx = numX - prevX;
 	  var dy = numY - prevY;
 	 let distance = Math.sqrt(dx * dx + dy * dy);
     //console.log(distance);
     let err=2;
-     if (distance>err){
+     if (distance>1.5*err){
 
         hideMen();
 	  //set movement values
@@ -435,6 +449,7 @@ function updateCursor(handData) {
         canvasCtx.beginPath();
         canvasCtx.fillStyle = "rgba(0,0,0,.5)";
         console.log(numX,numY);
+        if (sled===true){
         if (direction==="UP")
         {
              canvasCtx.ellipse(numX+60, numY+100, 4, 6, 0, 0, 2 * Math.PI);
@@ -449,6 +464,10 @@ function updateCursor(handData) {
 
         }
         canvasCtx.fill();
+        sled=false;
+        }
+
+
       }
   }else{return;}
 }
