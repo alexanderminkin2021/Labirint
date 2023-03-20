@@ -1,0 +1,144 @@
+     body {
+          margin: 0;
+          //overflow: hidden;
+        }
+
+        #vid{
+        display:none
+        }
+
+        .cursor2 {
+          height: 0;
+          left: 10;
+          position: absolute;
+          top:10;
+          transition: transform 0.1s;
+          width: 0;
+          z-index: 10;
+          animation: animate 0.25s infinite;
+        }
+
+
+        .cursor2::after {
+          display: block;
+          height: 50px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          z-index: 10;
+          animation: animate 0.25s infinite;
+        }
+
+        .output_canvas{
+            background: #dddddd;
+            z-index: 11;
+            margin-top: 240;
+        }
+
+        .counter-box {
+          margin-left:200px;
+          width: 1200px;
+          height: 550px;
+          background: #eeeeee;
+        }
+
+        p {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        button {
+          border-radius: 4px;
+          border: 2px solid #0275d8;
+          font-size: 1rem;
+          padding: 1rem;
+        }
+.controls {
+  text-align: center;
+  padding: 0.5em 0;
+  background: #333e5a;
+}
+
+.controls {
+  color: #fff;
+}
+.controls p {
+  margin: 0;
+}
+.controls > div {
+  margin-bottom: 0.5em;
+}
+.controls > div:last-child {
+  margin-bottom: 0;
+}
+#select{
+    width:100;
+}
+
+@keyframes walk {
+    from { background-position: 0px; }
+    to { background-position: -244px; } /* <-- width of spritesheet*/
+}
+@keyframes walk2 {
+    from { background-position: 0px; }
+    to { background-position: -244px; } /* <-- width of spritesheet*/
+}
+#capguyRight {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menRight.png"); /* <-- url to spritesheet*/
+    margin: 0 auto;
+     position: absolute;
+    animation: walk 1s steps(2) infinite; /* <-- animation parameters, see below*/
+
+}
+
+#capguyLeft {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menLeft.png"); /* <-- url to spritesheet*/
+    margin: 0 auto;
+     position: absolute;
+    animation: walk2 1s steps(2) infinite; /* <-- animation parameters, see below*/
+
+}
+#capguyFront {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menFront.png"); /* <-- url to spritesheet*/
+    margin: 0 auto;
+     position: absolute;
+    animation: walk2 1s steps(2) infinite; /* <-- animation parameters, see below*/
+
+}
+#capguyBack {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menBack.png"); /* <-- url to spritesheet*/
+    margin: 0 auto;
+     position:absolute;
+    animation: walk2 1s steps(2) infinite; /* <-- animation parameters, see below*/
+
+}
+#capguyIdleDown {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menIdleDown.png"); /* <-- url to spritesheet*/
+    position: absolute;
+    margin: 0 auto;
+}
+#capguyIdleUp {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menIdleUp.png"); /* <-- url to spritesheet*/
+    position: absolute;
+    margin: 0 auto;
+}
+#capguyIdleRight {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menIdleRight.png"); /* <-- url to spritesheet*/
+    position: absolute;
+    margin: 0 auto;
+}
+#capguyIdleLeft {
+    width: 95px; height: 132px; /* <--  size of a single frame*/
+    background-image: url("/image/menIdleLeft.png"); /* <-- url to spritesheet*/
+    position: absolute;
+    margin: 0 auto;
+}

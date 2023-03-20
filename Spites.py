@@ -1,3 +1,4 @@
+import sys
 from pygame.locals import (K_i, K_k, K_j, K_l, K_ESCAPE, K_w, K_a, K_d, K_s, KEYDOWN, QUIT, )
 import pygame
 
@@ -129,4 +130,4 @@ while running:
     clock.tick(FPS)
 
 pygame.quit()
-
+sys.exit()

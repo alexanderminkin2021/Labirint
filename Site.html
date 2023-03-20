@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/openCamera.js"></script>
+
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d/control_utils_3d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+ <div class="container">
+    <br>
+   <div class="controls">
+      <button id="button">Get camera</button>
+      <select id="select">
+        <option></option>
+      </select>
+       <button id="buttonStop">Stop camera</button>
+    </div>
+     <div class="counter-box">
+         <div id="cursor">
+    <div id="capguyRight"></div>
+    <div id="capguyLeft"></div>
+    <div id="capguyBack"></div>
+    <div id="capguyFront"></div>
+    <div id="capguyIdleUp"></div>
+    <div id="capguyIdleDown"></div>
+    <div id="capguyIdleRight"></div>
+    <div id="capguyIdleLeft"></div>
+
+    </div>
+    <video id="vid" ></video>
+         <canvas class="output_canvas" width="1200px" height="550px"></canvas>
+
+        </div>
+
+</div>
+</body>
+
+</html>
